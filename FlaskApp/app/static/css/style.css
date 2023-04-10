@@ -1,0 +1,21 @@
+body {
+  display: inline-block;
+  text-align: center
+}
+
+.img_div {
+  margin-top: 10px;
+}
+
+.txt_div {
+  margin-top: 10px;
+  display: none;
+}
+
+.submit_btn {
+  margin-top: 10px;
+}
+
+.result_img {
+  margin-top: 10px;
+}

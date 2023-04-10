@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>
+    Watermarking Tool
+  </title>
+</head>
+<body>
+
+  <h1>Watermarking Tool</h1>
+
+  <form action="/" method="post" enctype="multipart/form-data">
+    
+    <fieldset id="radiofield">
+      <label>
+        <input type="radio" id="img_watermark_option" name="options" value="image_watermark" checked/>
+        Image Watermark
+      </label>
+      <label>
+        <input type="radio" id="txt_watermark_option" name="options" value="text_watermark"/>
+        Text Watermark
+      </label>
+    </fieldset>
+
+    <div class="img_div">
+      Upload Image to Watermark
+      <input type="file" accept="image/*" id="img_upload" name="img_upload"/>
+    </div>
+
+    <div class="img_div" id="wm_img_div">
+      Upload Image to Watermark with
+      <input type="file" accept="image/*" name="wm_img_upload" id="wm_img_upload"/>
+    </div>
+
+    <div class="txt_div" id="wm_txt_div">
+      Text to Watermark
+      <input type="text" placeholder="text" name="wm_txt_upload" id="wm_txt_upload"/>
+    </div>
+
+    <button class="submit_btn" type="submit">Watermark</button>
+
+  </form>
+
+  <img class="result_img" src="{{ result }}" width="500" height="300">
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
