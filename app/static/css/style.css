@@ -1,6 +1,9 @@
 body {
-  display: inline-block;
   text-align: center
+}
+
+.options_fs {
+  display: inline-block;
 }
 
 .img_div {

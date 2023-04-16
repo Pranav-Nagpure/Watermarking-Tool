@@ -7,12 +7,13 @@ import os
 
 app.config['GENERATED_FILE'] = 'app/static/generated'
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
     if request.method == 'GET':
         return render_template('index.html')
-    
+
     if request.method == 'POST':
         # Get Uploaded Image
         img = Image.open(request.files['img_upload'])
@@ -37,16 +38,17 @@ def index():
             # Replace ROI with Watermark
             wm_img = cv2.addWeighted(roi, 1, wm_img, 1, 0)
             img[top_y: bottom_y, left_x: right_x] = wm_img
-        
+
         elif request.form['options'] == 'text_watermark':
             # Get Input Text
             txt = request.form['wm_txt_upload']
 
             # Generate results
-            cv2.putText(img, text=txt, org=(img_w - 95, img_h - 10), fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale=0.5, color=(0,0,0), thickness=2, lineType=cv2.LINE_4)
-        
+            cv2.putText(img, text=txt, org=(img_w - 95, img_h - 10), fontFace=cv2.FONT_HERSHEY_COMPLEX,
+                        fontScale=0.5, color=(0, 0, 0), thickness=2, lineType=cv2.LINE_4)
+
         # Return results
         img = Image.fromarray(img)
         filepath = os.path.join(app.config['GENERATED_FILE'], 'image.jpg')
         img.save(filepath)
-        return render_template('index.html', result = 'static/generated/image.jpg')
+        return render_template('index.html', result='static/generated/image.jpg')
