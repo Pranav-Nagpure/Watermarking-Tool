@@ -26,7 +26,7 @@ Sample Image: https://virtualbackgrounds.site/wp-content/uploads/2020/07/windows
 Sample Watermark Image: https://c2techs.net/wp-content/uploads/2014/02/XP-logo.png
 
 See the implementation details with <a href="https://github.com/Pranav-Nagpure/Watermarking-Tool-NB">IPython Notebook</a>
-<p>
+</p>
 
 ## __Getting Started__
 
