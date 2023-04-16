@@ -19,7 +19,7 @@ Visit the <a>Web Application</a> deployed on render
 <p align="justify">
 Web Application to watermark an image with two options:
 
-- Watermark with another image at it's center
+- Watermark with another image at it's center (using <a href = "https://docs.opencv.org/3.4/d5/dc4/tutorial_adding_images.html">*linear blend operator*</a> from OpenCV)
 - Watermark with text at it's corner
 
 Sample Image: https://virtualbackgrounds.site/wp-content/uploads/2020/07/windows-xp-wallpaper-bliss.jpg
