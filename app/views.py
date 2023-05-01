@@ -1,9 +1,9 @@
-from app import app
-from flask import request, render_template
-from PIL import Image
-import numpy as np
-import cv2
 import os
+import cv2
+import numpy as np
+from app import app
+from PIL import Image
+from flask import request, render_template
 
 app.config['GENERATED_FILE'] = 'app/static/generated'
 
@@ -44,8 +44,7 @@ def index():
             txt = request.form['wm_txt_upload']
 
             # Generate results
-            cv2.putText(img, text=txt, org=(img_w - 95, img_h - 10), fontFace=cv2.FONT_HERSHEY_COMPLEX,
-                        fontScale=0.5, color=(0, 0, 0), thickness=2, lineType=cv2.LINE_4)
+            cv2.putText(img, text=txt, org=(img_w - 95, img_h - 10), fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale=0.5, color=(0, 0, 0), thickness=2, lineType=cv2.LINE_4)
 
         # Return results
         img = Image.fromarray(img)

@@ -1,9 +1,7 @@
 import os
-from os import environ
 
 
 class Config(object):
-
     DEBUG = False
     TESTING = False
 
@@ -11,11 +9,11 @@ class Config(object):
 
     SECRET_KEY = 'secret'
 
-    DB_NAME = "production-db"
-    DB_USERNAME = "root"
-    DB_PASSWORD = "password"
+    DB_NAME = 'production-db'
+    DB_USERNAME = 'root'
+    DB_PASSWORD = 'password'
 
-    UPLOADS = "/home/username/app/app/static/uploads"
+    UPLOADS = '/app/static/uploads'
 
     SESSION_COOKIE_SECURE = True
     DEFAULT_THEME = None
@@ -28,22 +26,22 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     DEBUG = True
 
-    DB_NAME = "production-db"
-    DB_USERNAME = "root"
-    DB_PASSWORD = "password"
+    DB_NAME = 'development-db'
+    DB_USERNAME = 'root'
+    DB_PASSWORD = 'password'
 
-    UPLOADS = "/home/username/app/app/static/uploads"
+    UPLOADS = '/app/static/uploads'
     SESSION_COOKIE_SECURE = False
 
 
 class TestingConfig(Config):
     DEBUG = True
 
-    DB_NAME = "production-db"
-    DB_USERNAME = "root"
-    DB_PASSWORD = "password"
+    DB_NAME = 'development-db'
+    DB_USERNAME = 'root'
+    DB_PASSWORD = 'password'
 
-    UPLOADS = "/home/username/app/app/static/uploads"
+    UPLOADS = '/app/static/uploads'
     SESSION_COOKIE_SECURE = False
 
 
