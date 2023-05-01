@@ -1,11 +1,6 @@
-import os
-
-
 class Config(object):
     DEBUG = False
     TESTING = False
-
-    basedir = os.path.abspath(os.path.dirname(__file__))
 
     SECRET_KEY = 'secret'
 
@@ -14,9 +9,7 @@ class Config(object):
     DB_PASSWORD = 'password'
 
     UPLOADS = '/app/static/uploads'
-
     SESSION_COOKIE_SECURE = True
-    DEFAULT_THEME = None
 
 
 class ProductionConfig(Config):
@@ -43,7 +36,3 @@ class TestingConfig(Config):
 
     UPLOADS = '/app/static/uploads'
     SESSION_COOKIE_SECURE = False
-
-
-class DebugConfig(Config):
-    DEBUG = False
